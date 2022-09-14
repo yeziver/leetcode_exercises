@@ -5,7 +5,12 @@ using namespace std;
 class Solution {
 public:
     int find_index(int num, int<set> nums) {
-        for (int i = 0; i <= s)
+        for (int i = 0; i < s; i++) {
+            if (num == nums[i]) {
+                return i;
+            }
+        }
+        return -1;
     }
     
     int romanToInt(string s) {
