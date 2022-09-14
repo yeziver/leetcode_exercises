@@ -1,26 +1,24 @@
-#include <iostream>
-#include <set>
-using namespace std;
-
 class Solution {
 public:
-    int find_index(int num, int<set> nums) {
-        for (int i = 0; i < s; i++) {
-            if (num == nums[i]) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    
     int romanToInt(string s) {
-        set<string> numerals = {"I", "V", "X", "L", "C", "D", "M"};
-        set<int> values = {1, 5, 10, 50, 100, 500, 1000};
-        
-        for (int i = 0; i < s.length(); i++) {
-        if (numerals.find(s[i]) != numerals.end()) {
-                
+        unordered_map<char, int> val;
+        val['I']= 1;
+        val['V']= 5;
+        val['X']= 10;
+        val['L']=50;
+        val['C']= 100;
+        val['D']= 500;
+        val['M']= 1000;
+        int result = 0;
+        for (int i = s.size()-1; i >= 0; i--) {
+            if(i != 0 && val[s[i-1]] < val[s[i]] ) {  //if the numeral is smaller than the one before it
+                result += val[s[i-1]] - val[s[i]];
+                continue;
             }
+            result += val[s[i]];
         }
+        return ans;
     }
 };
+    
+    
