@@ -45,3 +45,28 @@ public:
         else return false;
     }
 };
+
+
+//scan from left to right and reverse and stuff yk
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int left = 0;
+        int right = s.size()-1;
+        
+        while (left < right) {
+            if (tolower(s[left]) == tolower(s[right])) {
+                left++;
+                right--;
+            } else if (!isalpha(s[left]) && !isdigit(s[left])) {
+                left++;
+            } else if (!isdigit(s[right]) && !isalpha(s[right])) {
+                right--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+};
