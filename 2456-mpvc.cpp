@@ -7,11 +7,26 @@ public:
         for (int i = 0; i < creators.size(); i++) {
             for (int j = i+1; j < creators.size(); j++) {
                 if (creators[i] == creators[j]) {
-                    views[i] += views[j];
-                    views.erase(views.begin()+j);
-                    ids.erase(ids.begin()+j);
-                    creators.erase(creators.begin()+j);
-                    j--;
+                    if (views[i] > views[j]) {
+                        views[i] += views[j];
+                        views.erase(views.begin()+j);
+                        ids.erase(ids.begin()+j);
+                        creators.erase(creators.begin()+j);
+                        j--;
+                    } else if (views[j] > views[i]) {
+                        views[j] += views[i];
+                        views.erase(views.begin()+i);
+                        ids.erase(ids.begin()+i);
+                        creators.erase(creators.begin()+i);
+                        j--;
+                    } else {
+                        views[i] += views[j];
+                        views.erase(views.begin()+j);
+                        ids.erase(ids.begin()+j);
+                        creators.erase(creators.begin()+j);
+                        j--;     
+                    }
+
                 }
             }
         }
