@@ -4,12 +4,12 @@ public:
         vector<int> highestViewsIndex;
         int max = 0;
         for (int i = 0; i < views.size(); i++) {
-            if (view[i] > max) {
-                max = view[i];
+            if (views[i] > max) {
+                max = views[i];
             }
         }
         for (int i = 0; i < views.size(); i++) {
-            if (view[i] == max) {
+            if (views[i] == max) {
                 highestViewsIndex.push_back(i);
             }
         }
@@ -17,10 +17,12 @@ public:
         vector<vector<string>> results;
         for (int i = 0; i < highestViewsIndex.size(); i++) {
             vector<string> temp = {"",""};
-            int cur = highestViewIndex[i];
-            temp[0] == creators[cur];
-            temp[1] == ids[cur];
-            results.pushback(temp);
+            int cur = highestViewsIndex[i];
+            temp[0] = creators[cur];
+            temp[1] = ids[cur];
+            results.push_back(temp);
         }
+        
+        return results;
     }
 };
