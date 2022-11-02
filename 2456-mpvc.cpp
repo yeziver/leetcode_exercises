@@ -16,8 +16,11 @@ public:
         
         vector<vector<string>> results;
         for (int i = 0; i < highestViewsIndex.size(); i++) {
-            vector<string> temp;
-            temp.push
+            vector<string> temp = {"",""};
+            int cur = highestViewIndex[i];
+            temp[0] == creators[cur];
+            temp[1] == ids[cur];
+            results.pushback(temp);
         }
     }
 };
