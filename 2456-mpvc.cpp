@@ -13,5 +13,11 @@ public:
                 highestViewsIndex.push_back(i);
             }
         }
+        
+        vector<vector<string>> results;
+        for (int i = 0; i < highestViewsIndex.size(); i++) {
+            vector<string> temp;
+            temp.push
+        }
     }
 };
