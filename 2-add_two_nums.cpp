@@ -13,10 +13,10 @@ public:
     int findNumVal(ListNode* head) {
         ListNode *cur = head;
         int lvl = 0;
-        int val = 0;
+        unsigned long long val = 0;
         while (cur != NULL) {
-            int temp = cur->val;
-            val += temp + pow(10,lvl);
+            unsigned long long temp = cur->val;
+            val += temp * pow(10,lvl);
             lvl++;
             cur = cur->next;
         }
@@ -24,14 +24,14 @@ public:
     }
     
     ListNode* convertToList(int num) {
-        ListNode *head = new ListNode();
+        ListNode *head = new ListNode;
         int remainder = num % 10;
         head->val = remainder;
         num /= 10;
         ListNode *cur = head;
         
         while (num != 0) {
-            ListNode *nextN = new ListNode();
+            ListNode *nextN = new ListNode;
             int remainder = num % 10;
             nextN->val = remainder;
             cur->next = nextN;
