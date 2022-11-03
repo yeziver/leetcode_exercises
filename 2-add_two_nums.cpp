@@ -1,3 +1,5 @@
+//thanks leetcode... some of the values are too big to represent with my basic solution
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -10,7 +12,7 @@
  */
 class Solution {
 public:
-    int findNumVal(ListNode* head) {
+    unsigned long long findNumVal(ListNode* head) {
         ListNode *cur = head;
         int lvl = 0;
         unsigned long long val = 0;
@@ -23,7 +25,7 @@ public:
         return val;
     }
     
-    ListNode* convertToList(int num) {
+    ListNode* convertToList(unsigned long long num) {
         ListNode *head = new ListNode;
         int remainder = num % 10;
         head->val = remainder;
@@ -42,7 +44,7 @@ public:
     }
     
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        int resVal = findNumVal(l1) + findNumVal(l2);
+        unsigned long long resVal = findNumVal(l1) + findNumVal(l2);
         
         return convertToList(resVal);
     }
